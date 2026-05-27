@@ -1,0 +1,217 @@
+/* =============================================
+   ESTILOS GERAIS & RESET
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #222;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+
+/* =============================================
+   CABECALHO (HEADER)
+   ============================================= */
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.logo-img { height: 38px; }
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+.header-nav a {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn-assine {
+  background-color: #ff6600;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 4px;
+}
+
+/* =============================================
+   BARRA DE RESULTADOS (JOGOS)
+   ============================================= */
+.jogos-bar {
+  background-color: #fff;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.jogos-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  padding: 0 16px;
+}
+
+.jogos-item {
+  font-size: 0.75rem;
+  padding: 10px 12px;
+  border-right: 1px solid #eee;
+  white-space: nowrap;
+}
+
+/* =============================================
+   LAYOUT PRINCIPAL
+   ============================================= */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.75rem;
+  letter-spacing: 6px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   BLOCO DE DESTAQUE (HERO)
+   ============================================= */
+.destaque-hero {
+  background-color: #FFD400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 500px;          /* Altura do painel principal */
+  margin-bottom: 70px;    /* Margem para compensar imagem vazada */
+  overflow: visible; 
+}
+
+.destaque-texto {
+  width: 58%;             
+  padding: 40px 40px 40px 80px; /* Padding extra à esquerda para criar o "gap" */
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* Centraliza verticalmente o conteúdo */
+  gap: 30px;
+}
+
+.destaque-categoria {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.destaque-titulo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.1rem;
+  font-weight: 300;             /* Corrigido: Removido 'px' */
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+/* Imagem com efeito de "vazamento" (fora da borda) */
+.destaque-imagem {
+  position: absolute;
+  right: -120px;
+  top: 25px;              /* Ajuste de posição vertical */
+  height: 450px;          /* Altura da foto */
+  width: 42%;             /* Largura da foto */
+  z-index: 1;
+}
+
+.destaque-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Links menores abaixo do destaque */
+.destaque-links {
+  margin-top: 80px;       /* Ajustado para não criar um buraco excessivo após o justify-center */
+}
+
+.destaque-links li {
+  display: flex;
+  margin-bottom: 12px;
+  border-left: 3px solid #111;
+  padding-left: 12px;
+}
+
+.destaque-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* =============================================
+   WIDGETS LATERAIS / MAIS LIDAS
+   ============================================= */
+.mais-lidas-titulo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   RESPONSIVIDADE (MOBILE)
+   ============================================= */
+@media (max-width: 768px) {
+  .header-nav { display: none; }
+  
+  .destaque-hero {
+    flex-direction: column-reverse; 
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .destaque-imagem {
+    position: relative;   /* Remove o posicionamento absoluto */
+    top: 0;
+    right: 0;             /* Reseta o valor negativo do desktop */
+    width: 100%;
+    height: 250px;
+  }
+  
+  .destaque-texto {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .destaque-titulo { font-size: 1.5rem; }
+}

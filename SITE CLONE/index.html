@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UOL Esporte - Acompanhe ao vivo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== TOPO / HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" aria-label="Menu">&#9776;</button>
+        <a href="#" class="logo">
+          <img src="logo-uol-30-positivo (1).png" alt="UOL 30 Anos" class="logo-img" />
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="#">UOL Jogos</a>
+        <a href="#">Brasil dos Privilégios</a>
+        <a href="#">Canal UOL</a>
+        <a href="#">Colunas</a>
+      </nav>
+      <div class="header-right">
+        <a href="#" class="header-link">SAC</a>
+        <a href="#" class="header-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          EMAIL
+        </a>
+        <a href="#" class="header-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          ENTRE
+        </a>
+        <a href="#" class="btn-assine">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="gold" stroke="none"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          ASSINE UOL
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BARRA DE JOGOS (hotbar) ===== -->
+  <nav class="jogos-bar">
+    <div class="jogos-bar-inner">
+
+      <a href="#" class="jogos-item seu-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Seu Time
+      </a>
+
+      <a href="#" class="jogos-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Jogos do dia
+      </a>
+
+      <!-- Placar 1 -->
+      <div class="jogos-placar">
+        <div class="placar-badges">
+          <span class="badge-ao-vivo">AO VIVO</span>
+          <span class="badge-comp">SERIE D</span>
+        </div>
+        <span class="placar-times">
+          ARJ
+          <span class="escudo-circle red"></span>
+          0 <span class="placar-x">×</span> 0
+          <span class="escudo-circle red-dark"></span>
+          PAF
+        </span>
+      </div>
+
+      <!-- Placar 2 -->
+      <div class="jogos-placar">
+        <div class="placar-badges">
+          <span class="badge-ao-vivo">AO VIVO</span>
+          <span class="badge-comp">SERIE D</span>
+        </div>
+        <span class="placar-times">
+          SCC
+          <span class="escudo-circle orange"></span>
+          2 <span class="placar-x">×</span> 0
+          <span class="escudo-circle red-light"></span>
+          GBG
+        </span>
+      </div>
+
+      <a href="#" class="jogos-item campeonatos">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+        Campeonatos
+      </a>
+
+      <a href="#" class="jogos-item sublink">Brasileirão ›</a>
+      <a href="#" class="jogos-item sublink">Copa do Mundo ›</a>
+
+      <a href="#" class="jogos-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg>
+        Notícias
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+
+    <h1 class="section-title">ESPORTE</h1>
+
+    <!-- ===== DESTAQUE PRINCIPAL ===== -->
+    <section class="destaque-hero">
+      <div class="destaque-texto">
+        <span class="destaque-categoria">Futebol</span>
+        <h2 class="destaque-titulo">
+          Acompanhe os lances de Cerro Porteño-PAR x Palmeiras, pela Libertadores
+        </h2>
+        <ul class="destaque-links">
+          <li><a href="#">Acompanhe os lances de Estudiantes-ARG x Flamengo, pela Libertadores</a></li>
+          <li><a href="#">Mirassol vence Always Ready com um a menos e embola grupo na Libertadores</a></li>
+        </ul>
+      </div>
+      <div class="destaque-imagem">
+        <img src="foto_palmeirense.png" alt="Jogador do Palmeiras na Libertadores" />
+      </div>
+    </section>
+
+    <!-- ===== AS MAIS LIDAS ===== -->
+    <section class="mais-lidas">
+      <h2 class="mais-lidas-titulo">AS MAIS LIDAS DO UOL ESPORTE</h2>
+    </section>
+
+  </main>
+
+</body>
+</html>
