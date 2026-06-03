@@ -1,72 +1,216 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    background-color: #0d1117; /* Fundo escuro azulado premium (Estilo GitHub Dark) */
+    color: #c9d1d9;           /* Texto claro para excelente contraste */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.EfeitoFACIL {
-    color: #FF0000;
-    text-shadow: 0 0 3px #FF0000,
-                 0 0 5px #0000FF;
-}
-
-body {                          /*efeito médio*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: #121212;
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-    overflow: hidden;
-}
-
-.split-text-container {
-    display: flex;
-    font-size: 5rem;
-    font-weight: bold;
+/* Título Principal */
+.titulo {
+    text-align: center;
+    font-size: 24pt;
+    margin-bottom: 40px;
+    color: #58a6ff;
     text-transform: uppercase;
-    color: #fff;
-    overflow: hidden;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #21262d;
+    padding-bottom: 15px;
 }
 
-.text-part {
-    display: inline-block;
+/* Divisores Visuais de Categoria (Fácil / Intermediário) */
+.facil, .intermediario {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
     position: relative;
-    transform: translateX(0);
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
 }
 
-.text-part.left {
-    transform: translateX(-200%);
-    animation-name: slide-in-left;
+/* Selos elegantes para identificar os níveis */
+.facil::before, .intermediario::before {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    color: white;
+    padding: 2px 10px;
+    font-size: 9pt;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.facil::before { content: "NÍVEL: FÁCIL"; background-color: #238636; }
+.intermediario::before { content: "NÍVEL: INTERMEDIÁRIO"; background-color: #d29922; color: #0d1117; }
+
+/* Estilização Geral dos Blocos Internos de Animação */
+.facil > div, .intermediario > div {
+    background-color: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Evita que os textos que se movem vazem da caixinha */
 }
 
-.text-part.right {
-    transform: translateX(200%);
-    animation-name: slide-in-right;
+.facil > div:last-child, .intermediario > div:last-child {
+    margin-bottom: 0;
 }
 
-@keyframes slide-in-left {
+p[class^="txt"] {
+    font-size: 12pt;
+    font-weight: 500;
+}
+
+
+/* ==========================================================================
+   1. BLOCO FÁCIL - TRANSIÇÕES SUAVES E LINEARES
+   ========================================================================== */
+
+/* --- Animation 1: Gradiente de cor "color-shift" --- */
+.blue1 {
+    font-weight: bold;
+    animation: shiftToGray 3s infinite alternate ease-in-out;
+}
+.gray1 {
+    font-weight: bold;
+    animation: shiftToBlue 3s infinite alternate ease-in-out;
+}
+
+@keyframes shiftToGray {
+    0% { color: #58a6ff; }     /* Começa Azul */
+    100% { color: #8b949e; }   /* Termina Cinza */
+}
+@keyframes shiftToBlue {
+    0% { color: #8b949e; }     /* Começa Cinza */
+    100% { color: #58a6ff; }   /* Termina Azul */
+}
+
+
+/* --- Animation 2: Fade In / Fade Out (Mestre dos Magos) --- */
+.txt2 {
+    animation: mestreDosMagos 6s infinite ease-in-out;
+}
+
+@keyframes mestreDosMagos {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.95); /* Dá um leve efeito de distanciamento ao sumir */
+    }
+    15%, 85% {
+        opacity: 1;
+        transform: scale(1);    /* Fica nítido e no tamanho correto na tela */
+    }
+}
+
+
+/* --- Animation 3: Glow Pulse + Tracking In --- */
+.txt3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    animation: glowPulseTracking 4s infinite alternate ease-in-out;
+}
+
+@keyframes glowPulseTracking {
     0% {
-        transform: translateX(-200%);
+        letter-spacing: -3px; /* Letras esmagadas */
+        opacity: 0.3;
+        text-shadow: 0 0 0px rgba(255,255,255,0);
+        color: #8b949e;
     }
     100% {
-        transform: translateX(0);
+        letter-spacing: 5px; /* Letras expandidas */
+        opacity: 1;
+        /* Camadas de sombra neon que criam o efeito estelar brilhante */
+        text-shadow: 0 0 8px #ffdf80, 0 0 20px #e3b341;
+        color: #f0e6b4;
     }
 }
 
-@keyframes slide-in-right {
+
+/* ==========================================================================
+   2. BLOCO INTERMEDIÁRIO - MOVIMENTOS AVANÇADOS E IMPACTO
+   ========================================================================== */
+
+/* --- Animation 4: Slide Up to Slide Down --- */
+.txt4 {
+    text-align: center;
+    display: block;
+    animation: slideUpDown 5s infinite ease-in-out;
+}
+
+@keyframes slideUpDown {
     0% {
-        transform: translateX(200%);
+        transform: translateY(50px); /* Vem de baixo */
+        opacity: 0;
     }
-    100% {
-        transform: translateX(0);
+    10%, 80% {
+        transform: translateY(0);    /* Fixa no centro */
+        opacity: 1;
     }
+    90%, 100% {
+        transform: translateY(-50px); /* Sobe sumindo */
+        opacity: 0;
+    }
+}
+
+
+/* --- Animation 5: Slide In Left + Bounce In (Salto de Sapo) --- */
+.txt5 {
+    display: block;
+    animation: frogBounce 6s infinite ease-in-out;
+    transform-origin: bottom center; /* O eixo do quique fica na "firmeza" do chão */
+}
+
+@keyframes frogBounce {
+    0% {
+        transform: translateX(-100%) scaleX(1.2); /* Surge esticado vindo da esquerda */
+        opacity: 0;
+    }
+    15% {
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+    /* Simulando os impactos físicos do quique (Efeito Elástico) */
+    25% { transform: translateY(-20px) scaleY(1.15); } /* Primeiro pulo alto */
+    30% { transform: translateY(0) scaleY(0.85); }     /* Amassa no chão ao cair */
+    35% { transform: translateY(-10px) scaleY(1.05); } /* Segundo pulo baixo */
+    40% { transform: translateY(0) scaleY(0.95); }     /* Leve achatamento */
+    45% { transform: translateY(0) scaleY(1); }        /* Estabiliza */
+    
+    85% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(100%); }  /* Sai correndo pela direita */
+}
+
+
+/* --- Animation 6: Shake + Red Color (Erro do Sistema) --- */
+.txt6 {
+    font-weight: bold;
+    text-align: center;
+    color: #f85149; /* Vermelho vibrante de erro */
+    padding: 10px;
+    border-radius: 4px;
+    display: block;
+    animation: systemError 0.5s infinite;
+}
+
+/* O segredo do tremor é fazer micro-deslocamentos em eixos X e Y aleatórios e rotações rápidas */
+@keyframes systemError {
+    0%, 100% { transform: translate(0, 0); background-color: rgba(248, 81, 73, 0); }
+    10% { transform: translate(-3px, -1px) rotate(-1deg); }
+    20% { transform: translate(2px, 1px) rotate(1deg); background-color: rgba(248, 81, 73, 0.15); }
+    30% { transform: translate(-3px, 2px) rotate(0deg); }
+    40% { transform: translate(2px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); background-color: rgba(248, 81, 73, 0.05); }
+    60% { transform: translate(3px, 1px) rotate(0deg); }
+    70% { transform: translate(-2px, -1px) rotate(1deg); }
+    80% { transform: translate(2px, 1px) rotate(-1deg); }
+    90% { transform: translate(-1px, -1px) rotate(0deg); }
 }
